@@ -1,0 +1,6 @@
+@use 'includes' as i;
+
+.form-wrapper {
+  @include i.flex-row(center, center);
+  gap: 1rem;
+}

@@ -1,11 +1,13 @@
-<div class="todo-form">
+<div>
   <app-form [form]="form" (formSubmit)="submit()">
-    <app-input
-      [control]="form.controls[TodoAttr.TITLE]"
-      placeholder="Input To Do"
-      type="text" />
-    <button appButton [loading]="loading()" [isDisabled]="form.invalid">
-      ADD
-    </button>
+    <section class="form-wrapper">
+      <app-input
+        [control]="form.controls.title"
+        placeholder="Input To Do"
+        type="text" />
+      <button appButton [loading]="loading()" [isDisabled]="form.invalid">
+        ADD
+      </button>
+    </section>
   </app-form>
 </div>
