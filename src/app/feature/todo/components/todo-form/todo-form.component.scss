@@ -1,7 +1,13 @@
 @use 'includes' as i;
 
+:host{
+  display: block;
+  width: 100%;
+}
 .form-wrapper {
-  @include i.flex-row(center, center);
+  width: 100%;
+  flex: 1;
+  @include i.flex-row(flex-start, flex-start);
   gap: 1rem;
   background-color: white;
   padding: 1rem;
