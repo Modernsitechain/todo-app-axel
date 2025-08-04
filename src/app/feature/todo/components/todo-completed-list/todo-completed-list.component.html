@@ -1,1 +1,16 @@
-<p>todo-completed-list works!</p>
+@let todoList = todoService.completedTodoList();
+
+<ul class="list-wrapper">
+  @for (todo of todoList; track $index) {
+    <li class="item-wrapper">
+      <div class="item__todo" [class.completed]="todo.completed">
+        {{ todo.title }}
+      </div>
+      <div class="item__buttons">
+        <button appButton="text" (click)="onUncompleteTodo(todo.id)">🔄</button>
+
+        <button appButton="text" (click)="onDeleteTodo(todo.id)">🗑️</button>
+      </div>
+    </li>
+  }
+</ul>

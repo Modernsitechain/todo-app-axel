@@ -1,0 +1,29 @@
+@use 'includes' as i;
+@use 'themes' as t;
+
+:host {
+  display: block;
+  width: 100%;
+  height: fit-content;
+}
+
+.list-wrapper {
+  width: 100%;
+  @include i.flex-column();
+  gap: 0.25rem;
+  background-color: white;
+  @include i.shadow();
+  padding: 1rem;
+  border-radius: i.border-radius('md');
+}
+
+.item-wrapper {
+  width: 100%;
+  @include i.flex-row(center, space-between);
+}
+
+.item__todo {
+  &.completed {
+    text-decoration: line-through;
+  }
+}
