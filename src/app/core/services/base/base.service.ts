@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { LocalStorageService } from '../local-storage/local-storage.service';
+import { LocalStorageKey } from '@core/enums';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,25 @@ import { Observable } from 'rxjs';
 export class BaseService {
   private readonly http = inject(HttpClient);
   private readonly baseUrl = environment.BASE_URL.JSONPLACEHOLDER;
+  private readonly localStorageService = inject(LocalStorageService);
 
   constructor() {}
+
+  public getLocalStorage<T, R = T>(key: LocalStorageKey): Observable<R | null> {
+    const data: R | undefined = this.localStorageService.get(key);
+
+    if (data) {
+      return of(data);
+    } else {
+      return of(null);
+    }
+  }
+
+  // public postLocalStorage<T, R = T>(data: T, key: LocalStorageKey): Observable<R | null> {
+  //   const data = this.localStorageService.get(key);
+
+  //   return of(data);
+  // }
 
   protected getAPI<T, R = T>(endpoint: string, params?: T): Observable<R> {
     let httpParams = new HttpParams();

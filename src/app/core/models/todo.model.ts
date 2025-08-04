@@ -1,6 +1,6 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export interface Todo {
-  id: string;
+  id: number;
   title: string;
   completed: boolean;
 }
