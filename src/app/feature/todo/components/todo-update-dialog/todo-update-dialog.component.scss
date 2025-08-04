@@ -1,0 +1,11 @@
+@use 'includes' as i;
+@use 'themes' as t;
+
+.dialog-wrapper {
+  width: auto;
+  min-width: 25rem;
+  max-width: 35rem;
+  height: auto;
+  @include i.flex-column(center, center);
+  gap: 1.5rem;
+}
