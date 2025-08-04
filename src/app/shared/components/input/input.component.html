@@ -1,0 +1,84 @@
+<div class="input-wrapper" [class.has-icon]="icon !== undefined">
+  @if (icon) {
+    <app-icon [name]="icon" class="icon" [class.danger]="danger"></app-icon>
+  }
+  <input
+    #inputElement
+    class="input"
+    [class.split-left]="split() === 'left'"
+    [class.split-right]="split() === 'right'"
+    [class.sm]="size() === 'sm'"
+    [type]="type()"
+    [formControl]="control"
+    [autocomplete]="autocomplete()"
+    [placeholder]="placeholder"
+    [class.danger]="danger"
+    [ngClass]="'md'"
+    [min]="min()"
+    [max]="max()"
+    (paste)="onPaste()"
+    [style.padding-right.rem]="paddingRight()"
+    (keydown.enter)="preventEnter() ? $event.preventDefault() : null" />
+</div>
+
+<section class="message">
+  @if (control.getError('required') && control.touched) {
+    <app-error-message
+      [show]="control.getError('required') && control.touched"
+      [message]="'error-message.required'" />
+  }
+
+  @if (control.getError('email') && control.touched) {
+    <app-error-message
+      [show]="control.getError('email') && control.touched"
+      [message]="'error-message.email'" />
+  }
+
+  @if (control.getError('minlength') && control.touched) {
+    <app-error-message
+      [show]="control.getError('minlength') && control.touched"
+      [message]="'error-message.password-min-length'" />
+  }
+
+  @if (control.getError('mustMatch') && control.touched) {
+    <app-error-message
+      [show]="control.getError('mustMatch') && control.touched"
+      [message]="'error-message.must-match'" />
+  }
+
+  @if (control.getError('specialCharacter') && control.touched) {
+    <app-error-message
+      [show]="control.getError('specialCharacter') && control.touched"
+      [message]="'error-message.special-character'" />
+  }
+
+  @if (control.getError('noNumber') && control.touched) {
+    <app-error-message
+      [show]="control.getError('noNumber') && control.touched"
+      [message]="'error-message.has-number'" />
+  }
+
+  @if (control.getError('noUppercase') && control.touched) {
+    <app-error-message
+      [show]="control.getError('noUppercase') && control.touched"
+      [message]="'error-message.has-uppercase'" />
+  }
+
+  @if (control.getError('noLowercase') && control.touched) {
+    <app-error-message
+      [show]="control.getError('noLowercase') && control.touched"
+      [message]="'error-message.has-lowercase'" />
+  }
+
+  @if (control.getError('textMismatch') && control.dirty) {
+    <app-error-message
+      [show]="control.getError('textMismatch')"
+      [message]="'error-message.match-confirm-text'" />
+  }
+
+  @if (control.getError('spacesNotAllowed') && control.dirty) {
+    <app-error-message
+      [show]="control.getError('spacesNotAllowed')"
+      [message]="'error-message.no-space'" />
+  }
+</section>
