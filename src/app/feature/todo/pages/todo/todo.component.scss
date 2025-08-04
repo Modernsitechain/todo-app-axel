@@ -1,0 +1,10 @@
+@use 'includes' as i;
+@use 'themes' as t;
+
+:host {
+  @include i.flex-column(center, center);
+  width: 30rem;
+  padding: 1rem;
+  border-radius: i.border-radius('md');
+  background-color: t.get-color('neutral-gray', 100);
+}
