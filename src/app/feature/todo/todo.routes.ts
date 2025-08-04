@@ -7,5 +7,5 @@ export const TODO_ROUTES: Routes = [
     component: TodoListComponent
   },
   { path: '', pathMatch: 'full', redirectTo: '' },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '' }
 ];

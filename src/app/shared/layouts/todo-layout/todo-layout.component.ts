@@ -8,6 +8,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './todo-layout.component.html',
   styleUrl: './todo-layout.component.scss'
 })
-export class TodoLayoutComponent {
-
-}
+export class TodoLayoutComponent {}
