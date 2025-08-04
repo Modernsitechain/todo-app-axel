@@ -40,6 +40,7 @@ export class TodoFormComponent extends FormBase<any, any> {
       title: item.title,
       completed: false
     });
+    this.form.reset();
     return of();
   }
 }

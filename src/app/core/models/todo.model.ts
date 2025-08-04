@@ -1,4 +1,4 @@
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 export interface Todo {
   id: number;
   title: string;
@@ -10,5 +10,5 @@ export interface TodoForm {
 }
 
 export const TodoFormField = new FormGroup({
-  title: new FormControl<string | null>(null, [Validators.required])
+  title: new FormControl<string | null>(null)
 });

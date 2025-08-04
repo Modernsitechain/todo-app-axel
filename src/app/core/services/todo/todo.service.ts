@@ -71,4 +71,17 @@ export class TodoService {
       this.localStorageService.set(LocalStorageKey.MY_TODOS, updated);
     }
   }
+
+  public uncompleteTodoById(id: number): void {
+    const currentTodos = this.todos();
+
+    if (Array.isArray(currentTodos)) {
+      const updated = currentTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: false } : todo
+      );
+
+      this.todos.set(updated);
+      this.localStorageService.set(LocalStorageKey.MY_TODOS, updated);
+    }
+  }
 }

@@ -16,7 +16,7 @@ export class ButtonDirective {
     | 'danger'
     | ''
   >('primary');
-  public readonly size = input<'lg' | 'md' | 'sm'>('md');
+  public readonly size = input<'lg' | 'md' | 'sm'>('sm');
   public readonly rounded = input<'none' | 'md' | 'full' | 'circle'>('md');
   public readonly loading = input(false);
   public readonly square = input(false);

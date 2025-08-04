@@ -36,6 +36,9 @@
               ]
             },
             "scripts": [],
+            "allowedCommonJsDependencies": [
+              "dayjs"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
