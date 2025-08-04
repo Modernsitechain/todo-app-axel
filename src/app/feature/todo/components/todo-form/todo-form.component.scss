@@ -3,4 +3,8 @@
 .form-wrapper {
   @include i.flex-row(center, center);
   gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: i.border-radius('md');
+  @include i.shadow();
 }

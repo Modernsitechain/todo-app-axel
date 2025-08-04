@@ -29,7 +29,7 @@ export class InputComponent extends InputBaseClass {
   public readonly preventEnter = input<boolean>(false);
   public readonly split = input<'left' | 'right' | undefined>(undefined);
   public readonly disabled = input<boolean>(false);
-  public readonly size = input<'sm' | 'md'>('md');
+  public readonly size = input<'sm' | 'md'>('sm');
 
   public onPaste(): void {
     this.control.updateValueAndValidity();
