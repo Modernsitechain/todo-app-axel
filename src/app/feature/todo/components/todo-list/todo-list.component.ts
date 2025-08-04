@@ -1,14 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { Todo } from '@core/models';
 import { TodoService } from '@core/services/todo/todo.service';
-import { InputComponent } from '@shared/components/input/input.component';
 import { ButtonDirective } from '@shared/directives/button/button.directive';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [ButtonDirective, InputComponent, ReactiveFormsModule],
+  imports: [ButtonDirective],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })
