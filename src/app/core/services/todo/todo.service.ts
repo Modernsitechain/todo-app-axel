@@ -100,4 +100,17 @@ export class TodoService {
       this.localStorageService.set(LocalStorageKey.MY_TODOS, updated);
     }
   }
+
+  public updateTodo(todo: Todo): void {
+    const currentTodos = this.todos();
+
+    if (Array.isArray(currentTodos)) {
+      const updated = currentTodos.map((t) =>
+        t.id === todo.id ? { ...t, ...todo } : t
+      );
+
+      this.todos.set(updated);
+      this.localStorageService.set(LocalStorageKey.MY_TODOS, updated);
+    }
+  }
 }
