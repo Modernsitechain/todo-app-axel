@@ -1,0 +1,11 @@
+@use 'includes' as i;
+@use 'themes' as t;
+
+:host {
+  width: 100vw;
+  height: 100vh;
+  @include i.flex-column(center, center);
+  background-color: t.get-color('primary-green', 200);
+
+  gap: 1rem;
+}
