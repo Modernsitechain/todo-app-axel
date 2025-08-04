@@ -2,9 +2,20 @@
 @use 'themes' as t;
 
 :host {
+  display: block;
+  width: 100%;
+}
+
+.todo-wrapper {
+  @include i.flex-row(center, flex-start);
+  gap: 0.5rem;
+}
+
+.todo-list-wrapper {
   @include i.flex-column(center, center);
-  width: 30rem;
-  padding: 1rem;
-  border-radius: i.border-radius('md');
-  background-color: t.get-color('neutral-gray', 100);
+  gap: 0.5rem;
+}
+
+.completed-todo-list-wrapper {
+  @include i.flex(center, center);
 }
