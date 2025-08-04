@@ -1,7 +1,8 @@
 import { Directive, HostBinding, input } from '@angular/core';
 
 @Directive({
-  selector: '[appButton]'
+  selector: '[appButton]',
+  standalone: true
 })
 export class ButtonDirective {
   public appButton = input<

@@ -1,1 +1,11 @@
-<p>todo-form works!</p>
+<div class="todo-form">
+  <app-form [form]="form" (formSubmit)="submit()">
+    <app-input
+      [control]="form.controls[TodoAttr.TITLE]"
+      placeholder="Input To Do"
+      type="text" />
+    <button appButton [loading]="loading()" [isDisabled]="form.invalid">
+      ADD
+    </button>
+  </app-form>
+</div>
