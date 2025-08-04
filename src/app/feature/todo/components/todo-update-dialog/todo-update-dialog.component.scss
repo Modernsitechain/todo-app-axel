@@ -6,6 +6,6 @@
   min-width: 25rem;
   max-width: 35rem;
   height: auto;
-  @include i.flex-column(center, center);
+  @include i.flex-column(flex-start, flex-start);
   gap: 1.5rem;
 }

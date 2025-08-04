@@ -1,5 +1,11 @@
 <app-dialog>
-    <div class="dialog-wrapper">
-        update data
-    </div>
+  <div class="dialog-wrapper">
+    <header>
+      <h3>Item - {{ data.id }}</h3>
+    </header>
+    <app-input [control]="form.controls.title" placeholder="hehe" type="text" />
+    <footer>
+      <button appButton (click)="onUpdateTodo(data)">Update</button>
+    </footer>
+  </div>
 </app-dialog>

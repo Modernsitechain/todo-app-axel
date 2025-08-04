@@ -8,8 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "npm run build && npm run serve:ssr:axel-app",
-    "build:ssr": "npm run build && ng run axel-app:server",
-    "serve:ssr": "node dist/axel-app/server/server.mjs",
     "serve:ssr:axel-app": "node dist/axel-app/server/server.mjs"
   },
   "private": true,
