@@ -2,9 +2,20 @@
 @use 'themes' as t;
 
 :host {
-  display: block;
+  @include i.flex-column(flex-start, flex-start);
   width: 100%;
   height: 100%;
+  background-color: white;
+  @include i.shadow();
+  gap: 0.25rem;
+  padding: 1rem;
+  border-radius: i.border-radius('md');
+}
+
+.list-header{
+  width: 100%;
+  border-bottom: 1px solid t.get-color('primary-neutral', 200);
+  padding: .625rem 0;
 }
 
 .list-wrapper {
@@ -12,10 +23,6 @@
   height: 100%;
   @include i.flex-column(flex-start, flex-start);
   gap: 0.25rem;
-  background-color: white;
-  @include i.shadow();
-  padding: 1rem;
-  border-radius: i.border-radius('md');
 }
 
 .item-wrapper {
