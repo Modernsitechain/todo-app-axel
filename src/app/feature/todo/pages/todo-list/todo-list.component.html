@@ -1,0 +1,25 @@
+<div>
+  <h2>Todo Lists</h2>
+
+
+  <button (click)="addTodo()">add todo</button>
+  <button (click)="loadTodos()">refresh todo</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Todo</th>
+        <th>Is Completed?</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (todo of todos(); track $index) {
+      <tr>
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.completed }}</td>
+      </tr>
+      }@empty {
+        ga ada data
+      }
+    </tbody>
+  </table>
+</div>
