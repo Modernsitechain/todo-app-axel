@@ -1,5 +1,4 @@
-import { Component, effect, inject, signal } from '@angular/core';
-import { Todo } from '@core/models';
+import { Component, inject } from '@angular/core';
 import { TodoService } from '@core/services/todo/todo.service';
 import { ButtonDirective } from '@shared/directives/button/button.directive';
 
@@ -11,21 +10,7 @@ import { ButtonDirective } from '@shared/directives/button/button.directive';
   styleUrl: './todo-list.component.scss'
 })
 export class TodoListComponent {
-  private readonly todoService = inject(TodoService);
-  protected currentTodos = signal<Todo[] | []>([]);
-
-  constructor() {
-    effect(
-      () => {
-        const currentData = this.todoService.todos();
-
-        if (currentData) {
-          this.currentTodos.set(currentData);
-        }
-      },
-      { allowSignalWrites: true }
-    );
-  }
+  public readonly todoService = inject(TodoService);
 
   public onCompleteTodo(id: number) {
     this.todoService.completeTodoById(id);

@@ -1,5 +1,7 @@
+@let todoList = todoService.todoList();
+
 <ul class="list-wrapper">
-  @for (todo of currentTodos(); track $index) {
+  @for (todo of todoList; track $index) {
     <li class="item-wrapper">
       <div class="item__todo" [class.completed]="todo.completed">
         {{ todo.title }}

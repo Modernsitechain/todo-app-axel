@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TodoService } from '@core/services/todo/todo.service';
 
 @Component({
   selector: 'app-todo-completed-list',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './todo-completed-list.component.scss'
 })
 export class TodoCompletedListComponent {
-
+  private readonly todoService = inject(TodoService);
+  
 }

@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { Todo } from '@core/models';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 import { LocalStorageKey } from '@core/enums';
@@ -8,8 +8,24 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class TodoService {
-  public todos = signal<Todo[] | null>(null);
+  private todos = signal<Todo[] | null>(null);
   private readonly localStorageService = inject(LocalStorageService);
+
+  public todoList = computed<Todo[]>(() => {
+    if (this.todos()) {
+      return this.todos()!.filter((todo) => todo.completed === false);
+    }
+
+    return [];
+  });
+
+  public completedTodoList = computed<Todo[]>(() => {
+    if (this.todos()) {
+      return this.todos()!.filter((todo) => todo.completed === true);
+    }
+
+    return [];
+  });
 
   constructor() {
     this.checkTodos();
