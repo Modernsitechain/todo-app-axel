@@ -1,0 +1,8 @@
+@use 'includes' as i;
+
+:host {
+  @include i.flex-column(stretch, center);
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: i.border-radius('lg');
+}
