@@ -6,15 +6,15 @@ export const routes: Routes = [
   {
     path: 'todo',
     component: TodoLayoutComponent,
-    loadChildren: () => TODO_ROUTES,
+    loadChildren: () => TODO_ROUTES
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'todo',
+    redirectTo: 'todo'
   },
   {
     path: '**',
-    redirectTo: 'todo',
-  },
+    redirectTo: 'todo'
+  }
 ];
