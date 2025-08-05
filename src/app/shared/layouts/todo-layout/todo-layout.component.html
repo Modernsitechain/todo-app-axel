@@ -3,5 +3,9 @@
 </header>
 
 <main>
-  <router-outlet></router-outlet>
+  @defer () {
+    <app-todo></app-todo>
+  } @placeholder (minimum 1000ms) {
+    <p>😊loading your todo app</p>
+  }
 </main>

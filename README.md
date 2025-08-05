@@ -39,7 +39,7 @@ npm run production:ssr
     
 - [x] Well-structured folder architecture, scalable and ready for further development (reusable component)
 - [x] Error Handling
-- [x] Environment Setup (env, staging, production)
+- [x] Environment Setup (env, production)
 - [x] Responsive App
 - [x] SSR Configuration
 
