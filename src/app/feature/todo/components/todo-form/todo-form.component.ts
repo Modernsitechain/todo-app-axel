@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBase } from '@core/classes/form-base';
-import { Todo, TodoForm, TodoFormField } from '@core/models';
+import { TodoForm, TodoFormField } from '@core/models';
 import { TodoService } from '@core/services/todo/todo.service';
 import { FormComponent } from '@shared/components/form/form.component';
 import { InputComponent } from '@shared/components/input/input.component';
@@ -26,19 +26,12 @@ export class TodoFormComponent extends FormBase<any, any> {
 
   public override form = TodoFormField;
 
-  public addTodo(title: string) {
-    const data: Todo = {
-      id: dayjs().unix(),
-      title: title,
-      completed: false
-    };
-    this.todoService.addTodo(data);
-  }
   protected override onSubmit(item: TodoForm): Observable<any> {
     this.todoService.addTodo({
       id: dayjs().unix(),
       title: item.title,
-      completed: false
+      completed: false,
+      createdAt: dayjs().format()
     });
     this.form.reset();
     return of();

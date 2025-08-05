@@ -11,11 +11,27 @@
         {{ todo.title }}
       </div>
       <div class="item__buttons">
-        <button appButton="text" (click)="onCompleteTodo(todo.id)">✅</button>
-
-        <button appButton="text" (click)="onDeleteTodo(todo.id)">🗑️</button>
-        <button appButton="text" (click)="onUpdateTodo(todo)">📝</button>
+        <button
+          appButton="text"
+          title="Complete Task"
+          (click)="onCompleteTodo(todo.id)">
+          ✅
+        </button>
+        <button
+          appButton="text"
+          title="Delete Task"
+          (click)="onDeleteTodo(todo.id)">
+          🗑️
+        </button>
+        <button
+          appButton="text"
+          title="Update Task"
+          (click)="onUpdateTodo(todo)">
+          📝
+        </button>
       </div>
     </li>
+  } @empty {
+    <p>No task available!</p>
   }
 </ul>

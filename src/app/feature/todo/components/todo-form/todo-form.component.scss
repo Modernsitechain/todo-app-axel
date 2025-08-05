@@ -8,9 +8,13 @@
   width: 100%;
   flex: 1;
   @include i.flex-row(flex-start, flex-start);
-  gap: 1rem;
+  gap: .5rem;
   background-color: white;
   padding: 1rem;
   border-radius: i.border-radius('md');
   @include i.shadow();
+}
+
+app-input{
+  width: 100% !important;
 }

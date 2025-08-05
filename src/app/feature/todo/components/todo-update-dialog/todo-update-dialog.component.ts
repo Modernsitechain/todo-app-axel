@@ -6,6 +6,7 @@ import { TodoService } from '@core/services/todo/todo.service';
 import { DialogComponent } from '@shared/components/dialog/dialog.component';
 import { InputComponent } from '@shared/components/input/input.component';
 import { ButtonDirective } from '@shared/directives/button/button.directive';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'app-todo-update-dialog',
@@ -41,7 +42,9 @@ export class TodoUpdateDialogComponent implements OnInit {
     this.todoService.updateTodo({
       id: todo.id,
       title: this.form.controls.title.value || todo.title,
-      completed: todo.completed
+      completed: todo.completed,
+      createdAt: todo.createdAt,
+      updatedAt: dayjs().format()
     });
 
     this.dialogRef.close();

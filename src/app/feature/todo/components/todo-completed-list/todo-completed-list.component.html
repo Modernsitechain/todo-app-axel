@@ -11,10 +11,11 @@
         {{ todo.title }}
       </div>
       <div class="item__buttons">
-        <button appButton="text" (click)="onUncompleteTodo(todo.id)">🔄</button>
-
+        <button appButton="text"  (click)="onUncompleteTodo(todo.id)">🔄</button>
         <button appButton="text" (click)="onDeleteTodo(todo.id)">🗑️</button>
       </div>
     </li>
+  }@empty {
+    <p>No task available!</p>
   }
 </ul>

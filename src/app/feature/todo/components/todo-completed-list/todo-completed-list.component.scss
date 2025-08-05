@@ -18,12 +18,13 @@
   height: 100%;
   @include i.flex-column(flex-start, flex-start);
   gap: 0.25rem;
+  margin-top: 0.25rem;
 }
 
-.list-header{
+.list-header {
   width: 100%;
   border-bottom: 1px solid t.get-color('primary-neutral', 200);
-  padding: .625rem 0;
+  padding: 0.625rem 0;
 }
 
 .item-wrapper {
@@ -35,4 +36,9 @@
   &.completed {
     text-decoration: line-through;
   }
+}
+
+.item__buttons {
+  @include i.flex-row(center, flex-end);
+  min-width: 6rem;
 }

@@ -3,6 +3,7 @@ import { Todo } from '@core/models';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 import { LocalStorageKey } from '@core/enums';
 import { Observable, of } from 'rxjs';
+import dayjs from 'dayjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,11 @@ export class TodoService {
 
   public todoList = computed<Todo[]>(() => {
     if (this.todos()) {
-      return this.todos()!.filter((todo) => todo.completed === false);
+      return this.todos()!
+        .filter((todo) => todo.completed === false)
+        .sort((a, b) => {
+          return dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf();
+        });
     }
 
     return [];
@@ -21,7 +26,11 @@ export class TodoService {
 
   public completedTodoList = computed<Todo[]>(() => {
     if (this.todos()) {
-      return this.todos()!.filter((todo) => todo.completed === true);
+      return this.todos()!
+        .filter((todo) => todo.completed === true)
+        .sort((a, b) => {
+          return dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf();
+        });
     }
 
     return [];
@@ -80,7 +89,9 @@ export class TodoService {
 
     if (Array.isArray(currentTodos)) {
       const updated = currentTodos.map((todo) =>
-        todo.id === id ? { ...todo, completed: true } : todo
+        todo.id === id
+          ? { ...todo, completed: true, updatedAt: dayjs().format() }
+          : todo
       );
 
       this.todos.set(updated);
@@ -93,7 +104,9 @@ export class TodoService {
 
     if (Array.isArray(currentTodos)) {
       const updated = currentTodos.map((todo) =>
-        todo.id === id ? { ...todo, completed: false } : todo
+        todo.id === id
+          ? { ...todo, completed: false, updatedAt: dayjs().format() }
+          : todo
       );
 
       this.todos.set(updated);

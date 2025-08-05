@@ -5,6 +5,23 @@
   width: 100vw;
   height: 100vh;
   @include i.flex-column(center, center);
-  background-color: white;
+  background-color: t.get-color('primary-neutral', 100);
   gap: 1rem;
+  overflow-y: auto;
+}
+
+h1{
+  font-weight: bold;
+  text-align: center;
+}
+
+@include i.breakpoint-down('md'){
+  :host{
+    @include i.flex-column(center, flex-start);
+    min-height: 100vh;
+    height: fit-content;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    overflow-y: auto;
+  }
 }

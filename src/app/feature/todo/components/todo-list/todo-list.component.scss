@@ -35,3 +35,9 @@
     text-decoration: line-through;
   }
 }
+
+
+.item__buttons{
+  @include i.flex-row(center, flex-end);
+  min-width: 8rem;
+}
