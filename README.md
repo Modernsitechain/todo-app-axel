@@ -2,6 +2,12 @@
 
 A simple and responsive ToDo List application built with Angular 18. This app supports SSR for faster load times and better SEO, along with basic task management features.
 
+
+
+https://github.com/user-attachments/assets/20ea4bb9-5f73-4dff-ab5e-0bfcfea40ac3
+
+
+
 ---
 
 ## Setup Instructions
