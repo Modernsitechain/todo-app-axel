@@ -13,5 +13,5 @@ export interface TodoForm {
 }
 
 export const TodoFormField = new FormGroup({
-  title: new FormControl<string | null>(null, [Validators.maxLength(10)])
+  title: new FormControl<string | null>(null, [Validators.maxLength(100)])
 });
