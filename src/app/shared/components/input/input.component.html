@@ -18,14 +18,10 @@
 
 <section class="message">
   @if (control.getError('required') && control.touched) {
-    <app-error-message
-      [show]="control.getError('required') && control.touched"
-      message="This field is required." />
+      <p>This field is required.</p>
   }
 
-  @if (control.getError('maxLength') && control.touched) {
-    <app-error-message
-      [show]="control.getError('maxLength') && control.touched"
-      message="This field must not exceed 100 characters." />
+  @if (control.getError('maxlength') && control.value !== '') {
+    <p>This field must not exceed 100 characters.</p>
   }
 </section>

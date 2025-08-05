@@ -2,12 +2,11 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputBaseClass } from '@core/classes/input-base.class';
-import { ErrorMessageComponent } from '../error-message/error-message.component';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, ErrorMessageComponent],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

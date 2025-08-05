@@ -1,4 +1,5 @@
 import { FormControl, FormGroup } from '@angular/forms';
+import { Validators } from '@shared/validators/validator.class';
 export interface Todo {
   id: number;
   title: string;
@@ -12,5 +13,5 @@ export interface TodoForm {
 }
 
 export const TodoFormField = new FormGroup({
-  title: new FormControl<string | null>(null)
+  title: new FormControl<string | null>(null, [Validators.maxLength(10)])
 });
