@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'app-error-message',
   standalone: true,
-  imports: [IconComponent],
+  imports: [],
   templateUrl: './error-message.component.html',
   styleUrl: './error-message.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

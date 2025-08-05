@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormControlStatus } from '@core/enums';
-import { IconName } from '@shared/components/icon/icon.component';
 
 @Directive()
 export abstract class InputBaseClass implements AfterViewInit {
@@ -31,10 +30,6 @@ export abstract class InputBaseClass implements AfterViewInit {
 
   @Input()
   public hideBorder = false;
-
-  @Input()
-  @HostBinding('class.has-icon')
-  public icon?: IconName;
 
   @Output()
   public iconClicked = new EventEmitter<void>();
@@ -66,16 +61,6 @@ export abstract class InputBaseClass implements AfterViewInit {
     }
 
     return this.control.status === FormControlStatus.Invalid;
-  }
-
-  public get variantIcon(): IconName | undefined {
-    if (this.control.pending) {
-      return 'saxRotateLeftOutline';
-    }
-    if (this.icon) {
-      return this.icon;
-    }
-    return undefined;
   }
 
   public disable(): void {
