@@ -36,6 +36,11 @@ npm run production:ssr
 - [x] SEO friendly setup! (semantic, headline score 73)
 
 <img width="262" height="176" alt="Screenshot 2025-08-05 at 11 03 44" src="https://github.com/user-attachments/assets/8ceaafc5-b2e2-41eb-b70c-b3fbe7fad10c" />
+
+<img width="599" height="274" alt="Screenshot 2025-08-05 at 11 41 55" src="https://github.com/user-attachments/assets/42b3ff32-2ed7-4013-b625-7a9294c5b424" />
+
+
+
     
 - [x] Well-structured folder architecture, scalable and ready for further development (reusable component)
 - [x] Error Handling
