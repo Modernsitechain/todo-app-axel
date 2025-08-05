@@ -34,6 +34,9 @@ npm run production:ssr
 
 - [x] CRUD for Todo List (Create, Update, Delete)
 - [x] SEO friendly setup! (semantic, headline score 73)
+
+<img width="262" height="176" alt="Screenshot 2025-08-05 at 11 03 44" src="https://github.com/user-attachments/assets/8ceaafc5-b2e2-41eb-b70c-b3fbe7fad10c" />
+    
 - [x] Well-structured folder architecture, scalable and ready for further development (reusable component)
 - [x] Error Handling
 - [x] Environment Setup (env, staging, production)
