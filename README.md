@@ -33,7 +33,7 @@ npm run production:ssr
 ## ✅ Completed Features
 
 - [x] CRUD for Todo List (Create, Update, Delete)
-- [x] SEO friendly setup!
+- [x] SEO friendly setup! (semantic, headline score 73)
 - [x] Well-structured folder architecture, scalable and ready for further development (reusable component)
 - [x] Error Handling
 - [x] Environment Setup (env, staging, production)
@@ -43,7 +43,7 @@ npm run production:ssr
 ---
 
 ## 🚧 Unfinished Features
-
+- [x] Priority and Duedate field
 ---
 
 ## 💡 Improvements with More Time
